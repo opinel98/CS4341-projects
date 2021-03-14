@@ -14,11 +14,21 @@ sys.path.insert(1, '../groupNN')
 
 # Uncomment this if you want the interactive character
 from interactivecharacter import InteractiveCharacter
+from ourcharacter import OurCharacter
 
 # Create the game
 g = Game.fromfile('map.txt')
 
+#c = OurCharacter( "me", "C", 0, 0, g.world)
+#c.makepath(g.world)
+
+
 # TODO Add your character
+g.add_character(OurCharacter("me",
+                             "C",
+                             0,0,
+                             g.world
+))
 
 # Uncomment this if you want the test character
 # g.add_character(TestCharacter("me", # name
@@ -27,15 +37,15 @@ g = Game.fromfile('map.txt')
 # ))
 
 # Uncomment this if you want the interactive character
-g.add_character(InteractiveCharacter("me", # name
-                                     "C",  # avatar
-                                     0, 0  # position
-))
+#g.add_character(InteractiveCharacter("me", # name
+ #                                    "C",  # avatar
+  #                                   0, 0  # position
+#))
 
 # Run!
 
 # Use this if you want to press ENTER to continue at each step
-# g.go(0)
+#g.go(0)
 
 # Use this if you want to proceed automatically
 g.go(1)

@@ -6,7 +6,6 @@ sys.path.insert(1, '..')
 # Import necessary stuff
 from game import Game
 
-# TODO This is your code!
 sys.path.insert(1, '../groupNN')
 
 # Uncomment this if you want the empty test character

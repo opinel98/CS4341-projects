@@ -21,6 +21,8 @@ class Astar(CharacterEntity, RealWorld):
         (self.endx, self.endy) = self.w.exitcell
         self.now = Node(None, 0, 0, 0, 0)
         self.open = []
+        self.mx = 0
+        self.my = 0
 
     def findpathtoend(self, sx, sy):
         self.now.x = sx
@@ -69,4 +71,22 @@ class Astar(CharacterEntity, RealWorld):
                                     node.f = 0;
                                 if (not self.findInList(op, node)) and (not self.findInList(cl, node)):
                                     self.open.append(node)
+
+    def distancetomonster(self, dx, dy):
+        m = self.w.monsters[0]
+        c = self.w.characters[0]
+        return max(abs(m.x - c.x), abs(m.y - c.y))
+
+    def ismonsternear(self):
+        for dx in [-1, 0, 1]:
+            if(self.now.x + dx >= 0) and (self.now.x + dx < self.w.width()):
+                for dy in [-1, 0, 1]:
+                    if (dx != 0) or (dy != 0):
+                        if(self.now.y + dy >= 0) and (self.now.y + dy < self.w.height()):
+                            mons = self.w.monsters_at(self.now.x + dx, self.now.y + dy)
+                            if mons:
+                                self.mx = dx
+                                self.my = dy
+                                return True
+
 

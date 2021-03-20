@@ -15,7 +15,7 @@ sys.path.insert(1, '../group24')
 from interactivecharacter import InteractiveCharacter
 from ascharacter import AsCharacter
 sys.path.insert(1, '../group24')
-from qlcharacter import qCharacter
+from qlcharacter import qlCharacter
 from qlearning import QLearner
 from qlhelpers import *
 
@@ -35,7 +35,7 @@ qLearner = QLearner([f_to_exit, f_to_monster, f_to_bomb, f_is_exploded_now, f_bo
 #                             g.world
 #))
 
-g.add_character(qCharacter("me", # name
+g.add_character(qlCharacter("me", # name
                            "C",  # avatar
                            0, 0,  # position
                            qLearner,

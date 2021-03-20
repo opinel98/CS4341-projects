@@ -1,5 +1,5 @@
 import sys
-from q_functions import *
+from qlhelpers import *
 
 sys.path.insert(0, "../")
 

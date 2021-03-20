@@ -111,8 +111,8 @@ class World:
                     tile = False
                     for k,clist in self.characters.items():
                         for c in clist:
-                            if c.tiles.get((x,y)):
-                                sys.stdout.write(c.tiles[(x,y)] + ".")
+                            if c.squares.get((x, y)):
+                                sys.stdout.write(c.squares[(x, y)] + ".")
                                 tile = True
                                 break
                     if not tile:

@@ -6,7 +6,7 @@ from entity import CharacterEntity
 from astar import Astar
 from colorama import Fore, Back
 
-class OurCharacter(CharacterEntity):
+class AsCharacter(CharacterEntity):
 
     def __init__(self, n, d, x, y, wrld):
         CharacterEntity.__init__(self, n, d, x, y)

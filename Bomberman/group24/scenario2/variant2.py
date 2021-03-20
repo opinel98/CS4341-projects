@@ -7,10 +7,9 @@ sys.path.insert(1, '..')
 import random
 from game import Game
 from monsters.stupid_monster import StupidMonster
-from ourcharacter import OurCharacter
 
 # TODO This is your code!
-sys.path.insert(1, '../groupNN')
+sys.path.insert(1, '../group24')
 from testcharacter import TestCharacter
 
 # Create the game
@@ -21,16 +20,11 @@ g.add_monster(StupidMonster("stupid", # name
                             3, 9      # position
 ))
 
-g.add_character(OurCharacter("me",
-                             "C",
-                             0,0,
-                             g.world
-                             ))
-
-#g.add_character(TestCharacter("me", # name
-#                              "C",  # avatar
-#                              0, 0  # position
-#))
+# TODO Add your character
+g.add_character(TestCharacter("me", # name
+                              "C",  # avatar
+                              0, 0  # position
+))
 
 # Run!
 g.go()
